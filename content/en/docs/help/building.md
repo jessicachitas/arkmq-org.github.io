@@ -1,7 +1,7 @@
 ---
 title: "Building"
-description: "Building ArtemisCloud.io"
-lead: "Building ArtemisCloud.io"
+description: "Building ArkMQ"
+lead: "Building ArkMQ"
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
@@ -37,7 +37,7 @@ Install [operator-sdk](https://sdk.operatorframework.io/) following [this guide]
 ## Get the code
 
 ```$xslt
-git clone https://github.com/artemiscloud/activemq-artemis-operator
+git clone https://github.com/arkmq-org/activemq-artemis-operator
 cd activemq-artemis-operator
 git checkout main
 ```

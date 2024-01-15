@@ -1,7 +1,7 @@
 ---
 title: "Bundle"
-description: "Bundle ArtemisCloud.io"
-lead: "Bundle ArtemisCloud.io"
+description: "Bundle ArkMQ"
+lead: "Bundle ArkMQ"
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
@@ -18,7 +18,7 @@ toc: true
 ## About the Operator Lifecycle Manager (OLM)
 
 The [Operator Lifecycle Manager](https://olm.operatorframework.io/) can help users to install and manage operators.
-The ArtemisCloud operator can be built into a bundle image and installed into OLM.
+The ArkMQ operator can be built into a bundle image and installed into OLM.
 
 ## Building
 
@@ -89,8 +89,8 @@ metadata:
 spec:
   sourceType: grpc
   image: quay.io/hgao/operator-catalog:v0.0.1
-  displayName: ArtemisCloud Index
-  publisher: ArtemisCloud
+  displayName: ArkMQ Index
+  publisher: ArkMQ
   updateStrategy:
     registryPoll:
       interval: 10m

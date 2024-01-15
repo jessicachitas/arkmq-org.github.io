@@ -1,4 +1,4 @@
-# ArtemisCloud.io website
+# ArkMQ website
 
 ## Requirements
 
@@ -8,7 +8,7 @@
 <details>
 <summary>Why Node.js?</summary>
 
-ArtemisCloud.io website uses Doks starter theme that uses npm (included with Node.js) to centralize dependency management, making it [easy to update](https://getdoks.org/docs/help/how-to-update/) resources, build tooling, plugins, and build scripts.
+ArkMQ website uses Doks starter theme that uses npm (included with Node.js) to centralize dependency management, making it [easy to update](https://getdoks.org/docs/help/how-to-update/) resources, build tooling, plugins, and build scripts.
 
 </details>
 
@@ -19,7 +19,7 @@ Start developing in three steps:
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/artemiscloud/artemiscloud.github.io.git artemiscloud.github.io.git && cd artemiscloud.github.io.git
+git clone https://github.com/arkmq-org/arkmq-org.github.io.git arkmq.github.io.git && cd arkmq.github.io.git
 ```
 
 ### 2. Install dependencies

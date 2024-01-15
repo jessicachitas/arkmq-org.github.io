@@ -1,10 +1,10 @@
 ---
 title: "Contributors"
-description: "The ArtemisCloud contributors."
+description: "The ArkMQ contributors."
 date: 2020-10-06T08:50:29+00:00
 lastmod: 2020-10-06T08:50:29+00:00
 draft: false
 images: []
 ---
 
-The ArtemisCloud contributors.
+The ArkMQ contributors.

@@ -1,6 +1,6 @@
 {
-  "name": "@artemiscloud/artemiscloud.github.io",
-  "description": "ArtemisCloud website",
+  "name": "@arkmq-org/arkmq-org.github.io",
+  "description": "ArkMQ website",
   "version": "0.4.3",
   "engines": {
 		"node": ">=16.15.0"
@@ -8,7 +8,7 @@
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/artemiscloud/artemiscloud.github.io",
+  "repository": "https://github.com/arkmq-org/arkmq-org.github.io",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

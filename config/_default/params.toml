@@ -1,37 +1,37 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "ArtemisCloud.io"
+title = "ArkMQ"
 titleSeparator = "-"
 titleAddition = "ActiveMQ Artemis on Kubernetes"
-description = "ArtemisCloud.io is a collection of container images that provide a way to deploy the Apache ActiveMQ Artemis Broker on Kubernetes."
+description = "ArkMQ is a collection of container images that provide a way to deploy the Apache ActiveMQ Artemis Broker on Kubernetes."
 
 ## Documentation
 # docsVersion = "0.3"
 
 ## Open Graph
-images = ["artemiscloud.png"]
+images = ["arkmq.png"]
 ogLocale = "en_US"
-titleHome = "ArtemisCloud.io"
+titleHome = "ArkMQ"
 
 ## Twitter Cards
-twitterSite = "@artemiscloudio"
+twitterSite = "@arkmq_org"
 twitterCreator = "@henkverlinde"
 
 ## JSON-LD
 # schemaType = "Person"
 schemaType = "Organization"
-schemaName = "ArtemisCloud.io"
+schemaName = "ArkMQ"
 schemaLocale = "en-US"
-schemaLogo = "artemiscloud.png"
+schemaLogo = "arkmq.png"
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "artemiscloud.png"
+schemaImage = "arkmq.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
-schemaTwitter = "https://twitter.com/artemiscloudio"
+schemaTwitter = "https://twitter.com/arkmq_org"
 schemaLinkedIn = ""
-schemaGitHub = "https://github.com/artemiscloud"
+schemaGitHub = "https://github.com/arkmq-org"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -57,12 +57,12 @@ copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
 # Alert
 alert = false
 alertDismissable = true
-alertText = "Introducing the ArtemisCloud.io! <a class=\"alert-link stretched-link\" href=\"https://artemiscloud.io/\">Check out ArtemisCloud.io</a>"
+alertText = "Introducing the ArkMQ! <a class=\"alert-link stretched-link\" href=\"https://arkmq.org/\">Check out ArkMQ</a>"
 
 # Edit Page
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
 repoHost = "GitHub"
-docsRepo = "https://github.com/artemiscloud/artemiscloud.github.io"
+docsRepo = "https://github.com/arkmq-org/arkmq-org.github.io"
 docsRepoBranch = "master"
 docsRepoSubPath = ""
 editPage = false

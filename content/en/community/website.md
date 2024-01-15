@@ -7,5 +7,5 @@ image: "images/website.png"
 draft: false
 ---
 
-You can contribute to this website by forking [artemiscloud.github.io](https://github.com/artemiscloud/artemiscloud.github.io) and raising a PR.
+You can contribute to this website by forking [arkmq-org.github.io](https://github.com/arkmq-org/arkamq-org.github.io) and raising a PR.
 Feel free to add a blog post, provide content or documentation.
