@@ -1,7 +1,7 @@
 ---
 title: "Operator"
-description: "Operator ArkMQ"
-lead: "Operator ArkMQ"
+description: "Operator arkmq-org.io"
+lead: "Operator arkmq-org.io"
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00
 draft: false
@@ -13,7 +13,7 @@ weight: 630
 toc: true
 ---
 
-## Overview of the ArkMQ Operator Custom Resource Definitions
+## Overview of the arkmq-org Operator Custom Resource Definitions
 
 In general, a Custom Resource Definition (CRD) is a schema of configuration items that you can modify for a custom Kubernetes 
 object deployed with an Operator. By creating a corresponding Custom Resource (CR) instance, you can specify values for 
@@ -74,7 +74,7 @@ For more information about provisioning persistent storage in Kubernetes, see [U
 ## Installing the Operator using the CLI
 
 This section shows how to use the Kubernetes command-line interface (CLI) to deploy the latest version of 
-the Operator for ArkMQ in your Kubernetes project.
+the Operator for arkmq-org in your Kubernetes project.
 
 If you intend to deploy brokers with persistent storage and do not have container-native storage in your Kubernetes cluster, 
 you need to manually provision Persistent Volumes (PVs) and ensure that they are available to be claimed by the Operator. 
@@ -134,7 +134,7 @@ After editing the Subscription yaml as such, save it and the operator will resta
 
 ### Getting the Operator code
 
-This procedure shows how to access and prepare the code you need to install the latest version of the Operator for ArkMQ .
+This procedure shows how to access and prepare the code you need to install the latest version of the Operator for arkmq-org .
 
 Download the latest version of the Operator from https://github.com/arkmq-org/activemq-artemis-operator/tags
 
@@ -305,7 +305,7 @@ The following procedure shows how to use a Custom Resource (CR) instance to crea
 
 Prerequisites
 
-1. You must have already installed the ArkMQ Operator.
+1. You must have already installed the arkmq-org Operator.
 
 2. To use the Kubernetes command-line interface (CLI) to install the ActiveMQ Artemis Operator, see [Installing the Operator](#installing-the-operator-using-the-cli).
 
@@ -337,7 +337,7 @@ spec:
 ```
 
 Observe that the sample CR uses a naming convention of **ex-aao**. This naming convention denotes that the CR is an example 
-resource for the ArkMQ (based on the ActiveMQ Artemis project) Operator. When you deploy this sample CR, the resulting 
+resource for the arkmq-org (based on the ActiveMQ Artemis project) Operator. When you deploy this sample CR, the resulting 
 Stateful Set uses the name **ex-aao-ss**. Furthermore, broker Pods in the deployment are directly based on the Stateful Set name, 
 for example, **ex-aao-ss-0**, **ex-aao-ss-1**, and so on. 
 
@@ -477,7 +477,7 @@ via the **kubectl scale** command. For example, suppose you use **kubectl** scal
 but the value of **deploymentPlan.size** in your CR is still 3. In this case, Kubernetes initially scales the deployment down to two brokers. 
 However, when the scaledown operation is complete, the Operator restores the deployment to three brokers, as specified in the CR.
 
-3. As described in [Deploying the Operator using the CLI](#deploying-the-operator-using-the-cli), if you create a broker deployment with persistent storage (that is, by setting persistenceEnabled=true in your CR), you might need to provision Persistent Volumes (PVs) for the ArkMQ Operator to claim for your broker Pods. If you scale down the size of your broker deployment, the Operator releases any PVs that it previously claimed for the broker Pods that are now shut down. However, if you remove your broker deployment by deleting your CR, ArkMQ Operator does not release Persistent Volume Claims (PVCs) for any broker Pods that are still in the deployment when you remove it. In addition, these unreleased PVs are unavailable to any new deployment. In this case, you need to manually release the volumes. For more information, see Releasing volumes in the Kubernetes documentation.
+3. As described in [Deploying the Operator using the CLI](#deploying-the-operator-using-the-cli), if you create a broker deployment with persistent storage (that is, by setting persistenceEnabled=true in your CR), you might need to provision Persistent Volumes (PVs) for the arkmq-org Operator to claim for your broker Pods. If you scale down the size of your broker deployment, the Operator releases any PVs that it previously claimed for the broker Pods that are now shut down. However, if you remove your broker deployment by deleting your CR, arkmq-org Operator does not release Persistent Volume Claims (PVCs) for any broker Pods that are still in the deployment when you remove it. In addition, these unreleased PVs are unavailable to any new deployment. In this case, you need to manually release the volumes. For more information, see Releasing volumes in the Kubernetes documentation.
 
 4. During an active scaling event, any further changes that you apply are queued by the Operator and executed only when scaling is complete. For example, suppose that you scale the size of your deployment down from four brokers to one. Then, while scaledown is taking place, you also change the values of the broker administrator user name and password. In this case, the Operator queues the user name and password changes until the deployment is running with one active broker.
 
@@ -515,7 +515,7 @@ spec:
   deploymentPlan:
     livenessProbe:
       tcpSocket:
-        port: 8181
+        port: 8161
       initialDelaySeconds: 30,
       timeoutSeconds:      5,
 ```
@@ -651,7 +651,6 @@ The use of Taints and Tolerations is outside the scope of this document, for ful
 
 It is possible to configure Affinity for the container pods, An example of this would be:
 
-
 ```yaml
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
@@ -669,18 +668,56 @@ spec:
                   operator: In
                   values:
                     - ssd
-  acceptors:
-    - name: "artemis"
-      port: 61617
-      protocols: core
 ```
 
 Affinity is outside the scope of this document, for full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/)
 
-### Labels and Node Selectors
+### Node Selectors
+
+It is possible to configure Node Selectors for the container pods, An example of this would be:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: broker
+  namespace: activemq-artemis-operator
+spec:
+  deploymentPlan:
+    nodeSelector:
+      location: "production"
+```
+
+Node Selectors are outside the scope of this document, for full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)
+
+### Priority Class
+
+It is possible to configure PriorityClassName for the container pods, An example of this would be:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: broker
+  namespace: activemq-artemis-operator
+spec:
+  resourceTemplates:
+    - selector:
+        kind: StatefulSet
+      patch:
+        spec:
+          template:
+            spec:
+              priorityClassName: high-priority
+```
+
+Pod Priority is outside the scope of this document, for full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/)
+
+## Configuring Labels and Annotations
+
+### Labels
 
 Labels can be added to the pods by defining them like so:
-
 
 ```yaml
 apiVersion: broker.amq.io/v1beta1
@@ -693,36 +730,13 @@ spec:
     labels:
       location: "production"
       partition: "customerA"
-  acceptors:
-    - name: "artemis"
-      port: 61617
-      protocols: core
 ```
 
-It is also possible to configure a Node Selector for the container pods, this is configured like:
-
-```yaml
-apiVersion: broker.amq.io/v1beta1
-kind: ActiveMQArtemis
-metadata:
-  name: broker
-  namespace: activemq-artemis-operator
-spec:
-  deploymentPlan:
-    nodeSelector:
-      location: "production"
-  acceptors:
-    - name: "artemis"
-      port: 61617
-      protocols: core
-```
-
-labels Node Selectors are outside the scope of this document, for full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+Labels are outside the scope of this document, for full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 
 ### Annotations
 
 Annotations can be added to the pods by defining them like so:
-
 
 ```yaml
 apiVersion: broker.amq.io/v1beta1
@@ -738,6 +752,7 @@ spec:
 ```
 
 ### Custom Labels and Annotations on supporting resources; Services, Ingress, Secrets etc.
+
 It is possible to configure  ResourceTemplate(s) for resources that are managed by the operator.
 The TemplateType contains Labels and Annotations with an optional Selector. If the selector is empty
 the template matches all resources. Othewise it can be used to restrict what is matched.
@@ -758,7 +773,32 @@ spec:
        someKey: "somevalue"
 ```
 
-### Setting  Environment Variables
+## Custom Modifications via a Strategic Merge Patch
+
+Occasionally it is necessary to make customisations to the spec of a managed resource. The `resourceTemplate.patch` attribute can be used to apply such customisations. The `patch` is appled by the operator using a [strategic merge](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/update-api-object-kubectl-patch/#notes-on-the-strategic-merge-patch) before submitting to the api server.
+In the following example, a custom security context is added to the internal broker container of the managed StatefulSet by patching just the required attribute. Note: `name` is the mergeKey, it must match that of the managed container with the CR.Name prefix:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: broker
+spec:
+  resourceTemplates:
+  - selector:
+      kind: "StatefulSet"
+    patch:
+      kind: "StatefulSet"
+      spec:
+        template:
+          spec:
+            containers:
+            - name: "broker-container"
+              securityContext:
+                runAsNonRoot: true
+```
+
+## Setting  Environment Variables
 
 As an advanced option, you can set environment variables for containers using a CR.
 For example, to have the JDK output what it sees as 'the system', provide a relevant JDK_JAVA_OPTIONS key in the env attribute.
@@ -778,8 +818,34 @@ spec:
       value: -XshowSettings:system
 
 ```
+---
+**NOTE**
 
-Note: you are configuring an array of [envVar](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#envvar-v1-core) which is a very powerfull concept. Proceed with care, taking due respect to any environment the operator may set and depend on. For full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
+You are configuring an array of [envVar](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#envvar-v1-core) which is a very powerfull concept. Proceed with care, taking due respect to any environment the operator may set and depend on. For full documentation see the [Kubernetes Documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
+
+There are a few well-known environment variables that are used by the operator internally to configure brokers, as shown below
+
+* JAVA_ARGS_APPEND
+* JAVA_OPTS
+* DEBUG_ARGS
+
+If you want to add some values to any of them, make sure you define it in **spec.env** using `value` field. If you use `valueFrom` for the env var you will get validation error condition in your CR's status.
+
+If you really need `valueFrom` to define the values for the above env vars you can use a different var and then reference it in the internal var's `value` field.
+
+For example:
+
+```yaml
+  env:
+    - name: ENV_FROM_X
+      valueFrom:
+        secretKeyRef:
+          key: JAVA_ARGS_APPEND
+          name: amq-broker-dev-java-args-append
+    - name: JAVA_ARGS_APPEND
+      value: $(ENV_FROM_X)
+```
+Reference: [define-interdependent-environment-variables](https://kubernetes.io/docs/tasks/inject-data-application/define-interdependent-environment-variables/)
 
 ## Configuring brokerProperties
 
@@ -801,6 +867,108 @@ spec:
     - globalMaxSize=512m
 ```
 
+## Providing additional brokerProperties configuration from a secret
+In order to provide a way to split or orgainse these properties by file or by secret, an extra mount can be used to provide a secret that will be treated as an additional source of broker properties configuration.
+
+Using an **extraMounts** secret with a suffix "-bp" will cause the operator to auto mount the secret and make the broker aware of it's location. In addition the CR.Status.Condition[BrokerPropertiesApplied] will reflect the content of this secret.
+
+Broker properties are applied in order, starting with the CR.brokerProperties and then with the "-bp" auto mounts in turn. Keys (or property files) from secrets are applied in alphabetical order and the supported formats are text and JSON.
+
+To configure the global max size with text brokerProperties configuration from a "-bp" secret:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: config-bp
+stringData:
+  globalMem.properties: |
+    globalMaxSize=512M
+```
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: ex-aao
+spec:
+  deploymentPlan:
+    extraMounts:
+      secrets:
+      - "config-bp"
+```
+
+To configure the global max size with JSON brokerProperties configuration from a "-bp" secret:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: config-bp
+stringData:
+  globalMem.json: |
+    {"globalMaxSize":"512M"}
+```
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: ex-aao
+spec:
+  deploymentPlan:
+    extraMounts:
+      secrets:
+      - "config-bp"
+```
+
+To configure a specific broker instance in a "-bp" secret, use `broker-N` as the prefix for a key in the secret data. For example:
+
+Create two -bp secrets:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: config-1-bp
+stringData:
+  journal1.properties: |
+    journalFileSize=12345
+  broker-0.globalMem.properties: |
+    globalMaxSize=512M
+```
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: config-2-bp
+stringData:
+  journal2.properties: |
+    journalMinFiles=3
+  broker-1.globalMem.properties: |
+    globalMaxSize=12M
+```
+
+and add the above secrets to extraMounts in the CR:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: ex-aao
+spec:
+  deploymentPlan:
+    size: 2
+    extraMounts:
+      secrets:
+      - "config-1-bp"
+      - "config-2-bp"
+```
+When the CR is deployed the broker in pod 0 broker will get `globalMaxSize=512M` and pod 1 broker will get `globalMaxSize=12M`. While both will get properties from `journal1.properties` of secret **config-1-bp** and `journal2.properties` from secret **config-2-bp**.
+
+## Replace ActiveMQArtemisAddress and ActiveMQArtemisSecurity CRDs with broker properties
+The ActiveMQArtemisAddress and ActiveMQArtemisSecurity CRDs are deprecated in favour of the configuration via broker properties. It is possible to replace the use of the activemqartemisaddresses CRD and much of the activemqartemissecurities CRD with configuration via broker properties.
 
 ## Configuring Logging for Brokers
 
@@ -877,6 +1045,14 @@ There would be corresponding keys for users.properties and roles.properties, the
 
 With the possiblity of configuring arbritary jaas login modules directly, the ArtemisSecurityCR ActiveMQArtemisSecuritySpec.LoginModules and ActiveMQArtemisSecuritySpec.SecurityDomains fields are deprecated.
 
+## restricted mode (experimental)
+The CR supports a boolean restricted attribute. For single pod broker deployments this provides an empty broker that is configured through brokerProperties. The broker is secured with PKI, there are no passwords. Cert manager can be used to create the necessary PKI secrets.  The end result is a minimal broker deployment; an embedded broker with an mtls endpoint for the jolokia jvm agent and RBAC that allows just the operator to check the broker status. There is no init container, no jetty and no xml.
+
+## operator PKI
+In order for the operator to be able to use mtls to connect to the broker operand it needs a client certificate and a trust bundle listing the trusted CAs. The user needs to provide these two secrets in the operator namespace; cert manager can be used to create and populate both. If CRs use the restricted flag, these secrets are a prerequisit.
+The default operator cert secret name is `activemq-artemis-manager-cert` and the default operator trust bundle secret name is `activemq-artemis-manager-ca`. 
+If either of these secrets need to be named differently, an enviroment variable can provide the alternative name using key ACTIVEMQ_ARTEMIS_MANAGER_CERT_SECRET_NAME or ACTIVEMQ_ARTEMIS_MANAGER_CA_SECRET_NAME.
+
 ## Locking down a broker deployment
 
 Often when verificiation is complete it is desirable to lock down the broker images and prevent auto upgrades, which will result in a roll out of images and a restart of your broker.
@@ -901,14 +1077,12 @@ In addition, you need to expose the console, for example
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
-  name: ex-aao
+  name: artemis-with-metrics
 spec:
-  deploymentPlan:
-    size: 1
-    enableMetricsPlugin: true
-    image: placeholder
   console:
     expose: true
+  deploymentPlan:
+    enableMetricsPlugin: true
 ```
 
 ### Enable JVM metrics
@@ -919,12 +1093,11 @@ JVM memory metrics are enabled by default. Use the `spec.brokerProperties` field
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
-  name: artemis-jvm
+  name: artemis-with-metrics
 spec:
   console:
     expose: true
   deploymentPlan:
-    size: 1
     enableMetricsPlugin: true
   brokerProperties:
     - "metricsConfiguration.jvmGc=true"
@@ -934,24 +1107,42 @@ spec:
 
 ### Monitor broker metrics by using Prometheus
 
-The operator will expose a containerPort named **wsconj** for the Prometheus to monitor. The following
+The operator will expose a port named **console-jolokia** for the Prometheus to monitor. The following
 is a sample Prometheus ServiceMonitor resource
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: example-app
+  name: artemis-with-metrics-monitor
   labels:
     team: prometheus
 spec:
   selector:
     matchLabels:
-      application: ex-aao-app
+      application: artemis-with-metrics-app
   endpoints:
-  - port: wconsj
+  - port: console-jolokia
 ```
-For a complete example please refer to this [arkmq example](https://github.com/arkmq-org/arkmq-examples/tree/main/operator/prometheus).
+For a complete example please refer to this [arkmq-org example](https://github.com/arkmq-org/arkmq-org-examples/tree/main/operator/prometheus).
+
+## Enabling Operator Metrics
+
+The operator exposes a port called **http-metrics** for Prometheus to monitor.
+The following is a sample Prometheus PodMonitor resource
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: activemq-artemis-controller-manager
+spec:
+  selector:
+    matchLabels:
+      control-plane: controller-manager
+  podMetricsEndpoints:
+  - port: http-metrics
+```
 
 ## Configuring PodDisruptionBudget for broker deployment
 
@@ -1010,6 +1201,22 @@ spec:
 
 When deploying the above custom resource the operator will spread matching pods among the given topology
 
+### Container SecurityContext
+
+The ActiveMQArtemis custom resource offers a container level SecurityContext option for the broker that holds security configuration that will be applied to the containers.
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: broker
+  namespace: activemq-artemis-operator
+spec:
+  deploymentPlan:
+    containerSecurityContext:
+      runAsNonRoot: true
+```
+
 ## Configuring Jolokia Access
 
 The operator uses jolokia endpoints to get broker status and also create queue/address resources using the address CRs.
@@ -1038,7 +1245,9 @@ spec:
   deploymentPlan:
     size: 1
 ```
-And you use init container to configure security to have a username **alice** with password **password1** for jolikia access. To enable operator to use client to have access jolokia, create a secret named **amq-jolokia-secret** in the same namespace, like this:
+
+And you use init container to configure security to have a username **alice** with password **password1** for jolokia access. To enable operator to use client to have access jolokia, create a secret named **amq-jolokia-secret** in the same namespace, like this:
+
 ```yaml
 apiVersion: v1
 metadata:
@@ -1050,3 +1259,240 @@ stringData:
   jolokiaUser: alice
   jolokiaPassword: password1
 ```
+
+## Configuring Additional Volumes to the Broker
+
+### Attaching extra volumes shared by all broker pods
+
+When you have some existing volumes to be used by brokers, you can use **spec.deploymentPlan.extraVolumes** and **spec.deploymentPlan.extraVolumeMounts** to configure a broker custom resource to mount those volumes. For example if you have a PersistentVolumeClaim type volume called **my-pvc** and it has 1G capacity with some useful data in it:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+```
+You can configure a broker CR to use it:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: artemis-broker
+spec:
+  deploymentPlan:
+    size: 2
+    extraVolumes:
+      - name: mydata
+        persistentVolumeClaim:
+          claimName: my-pvc
+    extraVolumeMounts:
+      - name: mydata
+        mountPath: /opt/mydata
+```
+When deploying the above CR, the PVC volume will be mounted to path **/opt/mydata** in the broker container of both broker pods. The **extraVolumeMounts** is optional. If not specified a default mountPath is given based on the type of the volume, following the pattern:
+
+/amq/extra/volumes/<volume.name>
+
+For example if you configure to attach a PersistentVolumeClaim type volume called `mydata`, the default mount path is **/amq/extra/volumes/mydata**.
+
+### Attaching extra persistent volume claims to each broker
+
+The operator also supports configuration for each of the brokers of a custom resource to have a separate persistent volume. To do this you need configure the CR using **spec.extraVolumeClaimTemplates** in your CR. For example:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: artemis-broker
+spec:
+  deploymentPlan:
+    extraVolumeClaimTemplates:
+    - metadata:
+        name: mydata
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Mi
+    size: 2
+    extraVolumeMounts:
+      - name: mydata
+        mountPath: /opt/mydata
+```
+The **extraVolumeClaimTemplates** is a list of PVC specs. The key is the **pvc name base** of the PVC. The value is of type [persistentVolumeClaimSpec](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.27/#persistentvolumeclaimspec-v1-core)
+
+When deploying the above CR, the operator will append the external PVC to the statefulset's PersistentVolumeClaimTemplate field. When the statesulset rolls out the pods it will mount matching PVCs to each pod.
+
+Note for each pod the PVC's name must follow the pattern `<volumeName>-<statefulset-name>-<ordinal>`.
+For the above CR the matching PVC names are **mydata-artemis-broker-ss-0** for pod0 and **mydata-artemis-broker-ss-1** for pod1 respectively. You can configure an optional VolumeMount for each PVC under **extraVolumeMounts**. If not specified the default mount path is **/opt/<volumeName>/data**.
+
+For complete configruation options please take a look at the api definitions of [broker CRD](../../api/v1beta1/activemqartemis_types.go).
+
+## Using cert-manager and trust-manager configure brokers
+
+Note: this feature currently is experimental. Feedback is welcomed.
+
+[cert-manager](https://cert-manager.io/) adds certificates and certificate issuers as resource types in Kubernetes clusters, and simplifies the process of obtaining, renewing and using those certificates.
+
+The operator provides options in the custom resource that utilizes cert-manager x509 certificates to configure SSL/TLS transports for brokers. It also works with [trust-manager](https://github.com/cert-manager/trust-manager) to distribute trust CA bundles.
+
+Before configuring a broker you need to have the certificates and bundles ready. The bundle target secret key must end with `.pem`. In the following example a self-signed isser is used as a root CA.
+
+Step 1 - create the root self-signed issuer
+
+```yaml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: root-issuer
+spec:
+  selfSigned: {}
+```
+
+Step 2 - create the root Certificate
+
+```yaml
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: root-ca
+  namespace: cert-manager
+spec:
+  isCA: true
+  commonName: "arkmq-org.io.root"
+  secretName: root-ca-secret
+  subject:
+    organizations:
+    - "www.arkmq-org.io"
+  issuerRef:
+    name: root-issuer
+    kind: ClusterIssuer
+```
+
+Step 3 - create a ca issuer that is used to issue broker certificates signed by the root CA
+
+```yaml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: broker-cert-issuer
+spec:
+  ca:
+    secretName: root-ca-secret
+```
+
+Step 4 - create a broker certificate signed by the root CA
+
+```yaml
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: server-cert
+spec:
+  isCA: false
+  commonName: "arkmq-org.io"
+  dnsNames:
+    - "artemis-broker-ss-0"
+    - "artemis-broker-ss-0.artemis-broker-hdls-svc.default.svc.cluster.local"
+  secretName: server-cert-secret
+  subject:
+    organizations:
+    - "www.arkmq-org.io"
+  issuerRef:
+    name: broker-cert-issuer
+    kind: ClusterIssuer
+```
+
+Step 5 - create the ca bundle from the root CA using trust-manager and setting a target secret key that ends with `.pem`
+
+```yaml
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: ca-bundle
+spec:
+  sources:
+  - useDefaultCAs: false
+  - secret:
+      name: "root-ca-secret"
+      key: "tls.crt"
+  target:
+    secret:
+      key: "trust-bundle.pem"
+```
+
+### Configuring SSL/TLS for management console
+
+Once you have the certificate and ca bundle ready you can configure the management console of the broker to used it:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: artemis-broker
+spec:
+  console:
+    expose: true
+    sslEnabled: true
+    sslSecret: server-cert-secret
+    trustSecret: ca-bundle
+  deploymentPlan:
+    size: 1
+```
+
+The above broker cr configures a broker that has a SSL/TLS secured management console whose keystore and truststore are generated from certificate stored in secret `server-cert-secret`.
+
+### Configuring SSL/TLS for acceptors and connectors
+
+With the certificate ready you can configure an acceptor and/or connector of the broker to use it:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: artemis-broker
+spec:
+  acceptors:
+    - name: new-acceptor
+      protocols: all
+      port: 62666
+      sslEnabled: true
+      needClientAuth: true
+      expose: true
+      sslSecret: server-cert-secret
+      trustSecret: ca-bundle
+  deploymentPlan:
+    size: 1
+```
+
+The above broker cr configures a broker that has a SSL/TLS secured acceptor called `new-acceptor` whose keystore and truststore are generated from secret `server-cert-secret` that is from the certificate resource.
+
+You can configure a connector with ssl parameters from a certificate in like manner, for example the following yaml configures a connector called `new-connector` with the certificated above mentioned:
+
+```yaml
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: artemis-broker
+spec:
+  connectors:
+    - name: new-connector
+      host: artemis-broker-ss-0
+      port: 62666
+      sslEnabled: true
+      expose: true
+      sslSecret: server-cert-secret
+      trustSecret: ca-bundle
+  deploymentPlan:
+    size: 1
+```
+
+For details on how to use cert-manager to manage your certificates please refer to its [documentation](https://cert-manager.io/docs/).

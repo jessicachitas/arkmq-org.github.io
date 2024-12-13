@@ -1,5 +1,5 @@
 ---
-title: "Using the ArkMQ Operator"  
+title: "Using the Arkmq-org Operator"  
 description: "Steps to get operator up and running and basic broker operations"
 draft: false
 images: []
@@ -10,19 +10,19 @@ weight: 110
 toc: true
 ---
 
-The [ArkMQ](https://github.com/arkmq-org) Operator is a powerful tool that allows you to configure and
+The [arkmq-org](https://github.com/arkmq-org) Operator is a powerful tool that allows you to configure and
 manage ActiveMQ Artemis broker resources in a cloud environment. You can get the Operator running in just a few steps.
 
 ### Prerequisite
 Before you start, you need to have access to a running Kubernetes cluster environment. A [Minikube](https://minikube.sigs.k8s.io/docs/start/)
-instance running on your laptop will do fine. The ArkMQ Operator can also run in an Openshift cluster environment such as [CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview).
+instance running on your laptop will do fine. The arkmq-org Operator can also run in an Openshift cluster environment such as [CodeReady Containers](https://developers.redhat.com/products/codeready-containers/overview).
 
 In this blog post, we assume that you have a Kubernetes cluster environment.
 
 **_NOTE:_**  If you use CodeReady Containers, the client tool is **oc** rather than **kubectl**
 
 ### Step 1 - Preparing for deployment
-Clone the ArkMQ Operator repo:
+Clone the arkmq-org Operator repo:
 ```shell script
       $ git clone https://github.com/arkmq-org/activemq-artemis-operator.git
 ```
@@ -151,7 +151,7 @@ Now, let's create a message queue in the broker:
 $ kubectl create -f examples/address/address_queue.yaml -n myproject
 activemqartemisaddress.broker.amq.io/artemis-address-queue created
 ```
-The _address_queue.yaml_ is another CR supported by the ArkMQ Operator. Its content is shown below:
+The _address_queue.yaml_ is another CR supported by the arkmq-org Operator. Its content is shown below:
 ```yaml
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
@@ -207,4 +207,4 @@ Connection brokerURL = tcp://artemis-address-queue-ss-0:61616
 ```
 ### Further information
 
-* [ArkMQ Github Repo](https://github.com/arkmq-org)
+* [arkmq-org Github Repo](https://github.com/arkmq-org)

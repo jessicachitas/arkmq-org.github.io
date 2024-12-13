@@ -64,7 +64,7 @@ Running Broker
 2021-01-29 10:05:09,372 INFO  [org.apache.activemq.artemis] AMQ241004: Artemis Console available at http://172.17.0.2:8161/console
 ```
 
-Well done you have now deployed your first arkmq image. Now we want to expose the broker to the outside world so
+Well done you have now deployed your first arkmq-org image. Now we want to expose the broker to the outside world so
 stop the broker and remove the image.
 
 ```shell script
