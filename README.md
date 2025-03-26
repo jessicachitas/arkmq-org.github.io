@@ -1,53 +1,41 @@
-# ArkMQ website
+# Website
 
-## Requirements
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-- [Git](https://git-scm.com/) — latest source release
-- [Node.js](https://nodejs.org/) — latest LTS version or newer
+### Installation
 
-<details>
-<summary>Why Node.js?</summary>
-
-ArkMQ website uses Doks starter theme that uses npm (included with Node.js) to centralize dependency management, making it [easy to update](https://getdoks.org/docs/help/how-to-update/) resources, build tooling, plugins, and build scripts.
-
-</details>
-
-## Get started
-
-Start developing in three steps:
-
-### 1. Clone this repository
-
-```bash
-git clone https://github.com/arkmq-org/arkmq-org.github.io.git arkmq.github.io.git && cd arkmq.github.io.git
+```
+$ npm install
 ```
 
-### 2. Install dependencies
+### Local Development
 
-```bash
-npm install
+```
+$ npm start
 ```
 
-### 3. Start development server
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-```bash
-npm run start
+<!-- ### Build
+
+```
+$ yarn build
 ```
 
-## Other commands
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-Doks comes with [commands](https://getdoks.org/docs/prologue/commands/) for common tasks.
+### Deployment
 
-## Documentation
+Using SSH:
 
-- [Netlify](https://docs.netlify.com/)
-- [Hugo](https://gohugo.io/documentation/)
-- [Doks](https://getdoks.org/)
+```
+$ USE_SSH=true yarn deploy
+```
 
-## Communities
+Not using SSH:
 
-- [Netlify Community](https://community.netlify.com/)
-- [Hugo Forums](https://discourse.gohugo.io/)
-- [Doks Discussions](https://github.com/h-enk/doks/discussions)
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
 
-## This is a test change
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch. -->
