@@ -119,7 +119,7 @@ spec:
       value: "--zap-log-level=debug"
 ```
 
-Note: The env var name must be **ARGS** and the value is **--zap-log-level=&#123;level&#125;** where &#123;level&#125; must
+Note: The env var name must be **ARGS** and the value is **--zap-log-level=\{level\};** where \{level\} must
 be one of **debug**, **info** and **error**. Any other values will be ignored.
 
 After editing the Subscription yaml as such, save it and the operator will restart with the given log level.
@@ -1289,7 +1289,7 @@ spec:
 ```
 When deploying the above CR, the PVC volume will be mounted to path **/opt/mydata** in the broker container of both broker pods. The **extraVolumeMounts** is optional. If not specified a default mountPath is given based on the type of the volume, following the pattern:
 
-/amq/extra/volumes/&#60;volumeName&#62;
+/amq/extra/volumes/\<volumeName\>
 
 For example if you configure to attach a PersistentVolumeClaim type volume called `mydata`, the default mount path is **/amq/extra/volumes/mydata**.
 
@@ -1323,7 +1323,7 @@ The **extraVolumeClaimTemplates** is a list of PVC specs. The key is the **pvc n
 When deploying the above CR, the operator will append the external PVC to the statefulset's PersistentVolumeClaimTemplate field. When the statesulset rolls out the pods it will mount matching PVCs to each pod.
 
 Note for each pod the PVC's name must follow the pattern `<volumeName>-<statefulset-name>-<ordinal>`.
-For the above CR the matching PVC names are **mydata-artemis-broker-ss-0** for pod0 and **mydata-artemis-broker-ss-1** for pod1 respectively. You can configure an optional VolumeMount for each PVC under **extraVolumeMounts**. If not specified the default mount path is **/opt/&#60;volumeName&#62;/data**.
+For the above CR the matching PVC names are **mydata-artemis-broker-ss-0** for pod0 and **mydata-artemis-broker-ss-1** for pod1 respectively. You can configure an optional VolumeMount for each PVC under **extraVolumeMounts**. If not specified the default mount path is **/opt/\<volumeName\>/data**.
 
 For complete configruation options please take a look at the api definitions of [broker CRD](../../api/v1beta1/activemqartemis_types.go).
 
