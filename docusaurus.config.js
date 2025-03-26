@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "OSPO Static Website Template",
+  title: "ArkMQ",
   tagline: "Powered by Docusaurus",
   favicon: "img/favicon.png",
 
@@ -22,8 +22,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "RedHatOfficial", // Usually your GitHub org/user name.
-  projectName: "static-website-template-for-ospo", // Usually your repo name.
+  organizationName: "arkmq-org", // Usually your GitHub org/user name.
+  projectName: "arkmq-org.github.io", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -43,11 +43,6 @@ const config = {
       ({
         docs: {
           sidebarPath: "./sidebars.js",
-
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/RedHatOfficial/static-website-template-for-ospo/tree/main/",
         },
         blog: {
           showReadingTime: true,
@@ -55,11 +50,6 @@ const config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/RedHatOfficial/static-website-template-for-ospo/tree/main/",
 
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
@@ -80,22 +70,19 @@ const config = {
       navbar: {
         // title: "My Site",
         logo: {
-          alt: "Example Logo",
+          alt: "ArkMQ",
           src: "img/logo-text.png",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Docs",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/RedHatOfficial/static-website-template-for-ospo/tree/main",
-            label: "GitHub",
-            position: "right",
-          },
+          { label: "Quick Start", to: "/docs/intro", position: "right" },
+          { label: "Contribute", to: "/docs/intro", position: "right" },
+          { label: "Docs", to: "/docs/intro", position: "right" },
+          { label: "Contact Us", to: "/docs/intro", position: "right" },
+          // {
+          //   href: "https://github.com/RedHatOfficial/static-website-template-for-ospo/tree/main",
+          //   label: "GitHub",
+          //   position: "left",
+          // },
         ],
       },
 
@@ -106,44 +93,19 @@ const config = {
           {
             title: "Docs",
             items: [
-              {
-                label: "How to Use",
-                to: "/docs/intro",
-              },
+              { label: "Quick Start", to: "/docs/intro" },
+              { label: "Help", to: "/docs/intro" },
+              { label: "Tutorials", to: "/docs/intro" },
             ],
           },
-          // {
-          //   title: "Community",
-          //   items: [
-          //     {
-          //       label: "Stack Overflow",
-          //       href: "https://stackoverflow.com/questions/tagged/docusaurus",
-          //     },
-          //     {
-          //       label: "Discord",
-          //       href: "https://discordapp.com/invite/docusaurus",
-          //     },
-          //     {
-          //       label: "X",
-          //       href: "https://x.com/docusaurus",
-          //     },
-          //   ],
-          // },
           {
-            title: "More",
+            title: "Community",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
+              { label: "GitHub", href: "https://github.com/facebook/docusaurus" },
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Apache, Apache ActiveMQ Artemis,Artemis and associated open source project names are trademarks of the Apache Software Foundation.`,
       },
       prism: {
         theme: prismThemes.vsLight,
