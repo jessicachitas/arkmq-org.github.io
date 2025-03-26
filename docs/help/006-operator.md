@@ -1289,7 +1289,7 @@ spec:
 ```
 When deploying the above CR, the PVC volume will be mounted to path **/opt/mydata** in the broker container of both broker pods. The **extraVolumeMounts** is optional. If not specified a default mountPath is given based on the type of the volume, following the pattern:
 
-/amq/extra/volumes/\<volumeName\>
+/amq/extra/volumes/\<volume.name\>
 
 For example if you configure to attach a PersistentVolumeClaim type volume called `mydata`, the default mount path is **/amq/extra/volumes/mydata**.
 
