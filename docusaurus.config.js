@@ -79,7 +79,7 @@ const config = {
           { label: "Docs", to: "/docs/intro", position: "right" },
           { label: "Contact Us", to: "/docs/intro", position: "right" },
           // {
-          //   href: "https://github.com/RedHatOfficial/static-website-template-for-ospo/tree/main",
+          //   href: "https://github.com/arkmq-org",
           //   label: "GitHub",
           //   position: "left",
           // },
@@ -101,7 +101,7 @@ const config = {
           {
             title: "Community",
             items: [
-              { label: "GitHub", href: "https://github.com/facebook/docusaurus" },
+              { label: "GitHub", href: "https://github.com/arkmq-org" },
             ],
           },
         ],
