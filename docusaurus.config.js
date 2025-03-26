@@ -74,9 +74,9 @@ const config = {
           src: "img/logo-text.png",
         },
         items: [
-          { label: "Quick Start", to: "/docs/intro", position: "right" },
+          { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
           { label: "Contribute", to: "/docs/intro", position: "right" },
-          { label: "Docs", to: "/docs/intro", position: "right" },
+          { label: "Docs", to: "/docs/getting-started/introduction", position: "right" },
           { label: "Contact Us", to: "/docs/intro", position: "right" },
           // {
           //   href: "https://github.com/arkmq-org",
