@@ -71,7 +71,7 @@ const config = {
         // title: "My Site",
         logo: {
           alt: "ArkMQ",
-          src: "img/logo-text.png",
+          src: "img/arkmq-logo.png",
         },
         items: [
           { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
