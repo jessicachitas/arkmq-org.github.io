@@ -208,18 +208,11 @@
   }
 }
 
-.about-header {
-  display: flex;
-  align-content: center;
-  @media screen and (max-width: 1440px) {
-    font-size: 2.5rem;
-  }
-}
-
 .about-grid {
   display: grid;
   grid-template-areas:
     "graphic-1 graphic-2 graphic-3 graphic-4 graphic-5"
+    "header-1 header-2 header-3 header-4 header-5"
     "text-1 text-2 text-3 text-4 text-5";
   align-items: center;
   align-content: stretch;
@@ -232,14 +225,23 @@
     @media screen and (max-width: 1024px) {
       grid-template-areas:
         "graphic-1"
+        "header-1"
         "text-1"
+
         "graphic-2"
+        "header-2"
         "text-2"
+
         "graphic-3"
+        "header-3"
         "text-3"
+
         "graphic-4"
+        "header-4"
         "text-4"
+
         "graphic-5"
+        "header-5"
         "text-5";
     }
   }
@@ -270,6 +272,46 @@
   grid-area: graphic-5;
 }
 
+.about-graphic-1 {
+  grid-area: graphic-1;
+}
+
+.about-graphic-2 {
+  grid-area: graphic-2;
+}
+
+.about-graphic-3 {
+  grid-area: graphic-3;
+}
+
+.about-graphic-4 {
+  grid-area: graphic-4;
+}
+
+.about-graphic-5 {
+  grid-area: graphic-5;
+}
+
+.about-section-1 {
+  grid-area: section-1;
+}
+
+.about-section-2 {
+  grid-area: section-2;
+}
+
+.about-section-3 {
+  grid-area: section-3;
+}
+
+.about-section-4 {
+  grid-area: section-4;
+}
+
+.about-section-5 {
+  grid-area: section-5;
+}
+
 .about-text-1 {
   grid-area: text-1;
 }
@@ -295,14 +337,22 @@
 .about-graphic-3,
 .about-graphic-4,
 .about-graphic-5 {
-  width: 18vw;
-  margin-top: 1vh;
+  min-width: 150px;
+  max-width: 200px;
   @media screen and (max-width: 1024px) {
     width: 25vw;
     @media screen and (max-width: 500px) {
       width: 75vw;
     }
   }
+}
+
+.about-header-1,
+.about-header-2,
+.about-header-3,
+.about-header-4,
+.about-header-5 {
+  margin-bottom: 0;
 }
 
 .about-text-1,

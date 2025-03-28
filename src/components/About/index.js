@@ -11,8 +11,8 @@ export default function About() {
             src={aboutGraphic}
             alt="About Graphic 1"
           ></img>
+          <h1 className="about-header-1">Cloud Orientated</h1>
           <p className="about-text-1" role="paragraph">
-            <h1>Cloud Orientated</h1>
             the ability to quickly deploy and run the broker as a container
             image
           </p>
@@ -20,18 +20,18 @@ export default function About() {
             className="about-graphic-2"
             src={aboutGraphic}
             alt="About Graphic 2"
-          ></img>
+          ></img>{" "}
+          <h1 className="about-header-2">Kubernetes</h1>
           <p className="about-text-2" role="paragraph">
-            <h1>Kubernetes</h1>
             The ability to run a Kubernetes native container on Kubernetes
           </p>
           <img
             className="about-graphic-3"
             src={aboutGraphic}
             alt="About Graphic 3"
-          ></img>
+          ></img>{" "}
+          <h1 className="about-header-3">Operator</h1>
           <p className="about-text-3" role="paragraph">
-            <h1>Operator</h1>
             The Operator based solution to manage the Kubernetes deployment
           </p>
           <img
@@ -39,16 +39,17 @@ export default function About() {
             src={aboutGraphic}
             alt="About Graphic 4"
           ></img>
+          <h1 className="about-header-4">Examples</h1>
           <p className="about-text-4" role="paragraph">
-            <h1>Examples</h1>A suite of examples to demonstrate each feature
+            A suite of examples to demonstrate each feature
           </p>
           <img
             className="about-graphic-5"
             src={aboutGraphic}
             alt="About Graphic 5"
           ></img>
+          <h1 className="about-header-5">CI/CD</h1>
           <p className="about-text-5" role="paragraph">
-            <h1>CI/CD</h1>
             Continuous intergration and deployment for quick development
           </p>
         </div>
