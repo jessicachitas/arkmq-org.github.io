@@ -99,6 +99,7 @@
 
 .welcome-info {
   display: block;
+  padding-right: 50rem;
 }
 
 .welcome-h1 {
@@ -108,15 +109,10 @@
 
 .welcome-h2 {
   font-weight: 500;
-  padding-right: 20rem;
   @media screen and (max-width: 768px) {
     padding: 0%;
     font-size: 1rem;
   }
-}
-
-.list-buttons {
-  padding-right: 10rem;
 }
 
 /* ----------------------------- Install Section ---------------------------- */
@@ -369,13 +365,14 @@
 }
 
 .static-button {
+  max-width: 50vw;
   display: inline-flex;
   align-items: center;
   justify-items: center;
   border-radius: 15px;
   border: 1px solid transparent;
   margin: 12.5px 0;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   font-size: 1rem !important;
   font-weight: 500;
   font-family: inherit;
