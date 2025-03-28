@@ -12,10 +12,9 @@ export default function About() {
             alt="About Graphic 1"
           ></img>
           <p className="about-text-1" role="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-            odio pretium leo porta lobortis. Sed et sem scelerisque, fermentum
-            lacus et, dapibus tortor. Nam consectetur ultricies urna id
-            fringilla.
+            <h1>Cloud Orientated</h1>
+            the ability to quickly deploy and run the broker as a container
+            image
           </p>
           <img
             className="about-graphic-2"
@@ -23,10 +22,8 @@ export default function About() {
             alt="About Graphic 2"
           ></img>
           <p className="about-text-2" role="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-            odio pretium leo porta lobortis. Sed et sem scelerisque, fermentum
-            lacus et, dapibus tortor. Nam consectetur ultricies urna id
-            fringilla.
+            <h1>Kubernetes</h1>
+            The ability to run a Kubernetes native container on Kubernetes
           </p>
           <img
             className="about-graphic-3"
@@ -34,10 +31,8 @@ export default function About() {
             alt="About Graphic 3"
           ></img>
           <p className="about-text-3" role="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-            odio pretium leo porta lobortis. Sed et sem scelerisque, fermentum
-            lacus et, dapibus tortor. Nam consectetur ultricies urna id
-            fringilla.
+            <h1>Operator</h1>
+            The Operator based solution to manage the Kubernetes deployment
           </p>
           <img
             className="about-graphic-4"
@@ -45,10 +40,7 @@ export default function About() {
             alt="About Graphic 4"
           ></img>
           <p className="about-text-4" role="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-            odio pretium leo porta lobortis. Sed et sem scelerisque, fermentum
-            lacus et, dapibus tortor. Nam consectetur ultricies urna id
-            fringilla.
+            <h1>Examples</h1>A suite of examples to demonstrate each feature
           </p>
           <img
             className="about-graphic-5"
@@ -56,10 +48,8 @@ export default function About() {
             alt="About Graphic 5"
           ></img>
           <p className="about-text-5" role="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-            odio pretium leo porta lobortis. Sed et sem scelerisque, fermentum
-            lacus et, dapibus tortor. Nam consectetur ultricies urna id
-            fringilla.
+            <h1>CI/CD</h1>
+            Continuous intergration and deployment for quick development
           </p>
         </div>
       </div>
