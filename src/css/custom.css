@@ -45,7 +45,7 @@
   --ifm-color-primary-lighter: #a4ceff;
   --ifm-color-primary-lightest: #91c4ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-pre-background: #ac0000;
+  --ifm-pre-background: #003cac;
   background-color: #262626;
 }
 
@@ -81,7 +81,6 @@
   background-color: #707070;
 }
 
-.welcome,
 .install,
 .demo,
 .about {
@@ -93,25 +92,18 @@
 
 /* ----------------------------- Welcome Section ---------------------------- */
 
-.welcome-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-}
-
-.welcome-info,
-.install-gif,
-.logo-full {
+.install-gif {
   display: block;
 }
 
-.welcome-info {
-  display: flexbox;
-  justify-content: center;
+.welcome {
+  float: left;
   padding: 10%;
+  align-content: center;
+}
+
+.welcome-info {
+  display: block;
 }
 
 .welcome-h1 {
@@ -121,23 +113,15 @@
 
 .welcome-h2 {
   font-weight: 500;
-  padding-right: 10rem;
+  padding-right: 20rem;
   @media screen and (max-width: 768px) {
     padding: 0%;
     font-size: 1rem;
   }
 }
 
-.welcome-image {
-  display: flex;
-  justify-content: center;
-}
-
-.logo-full{
-  width: 50%;
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
+.list-buttons {
+  padding-right: 10rem;
 }
 
 /* ----------------------------- Install Section ---------------------------- */
@@ -240,8 +224,8 @@
 .about-grid {
   display: grid;
   grid-template-areas:
-    "graphic-1 graphic-2 graphic-3 graphic-4"
-    "text-1 text-2 text-3 text-4";
+    "graphic-1 graphic-2 graphic-3 graphic-4 graphic-5"
+    "text-1 text-2 text-3 text-4 text-5";
   align-items: center;
   align-content: stretch;
   justify-items: center;
@@ -249,16 +233,8 @@
   text-align: center;
   gap: 2em;
   height: auto;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-areas:
-      "graphic-1 graphic-2"
-      "text-1 text-2"
-      "graphic-3 graphic-4"
-      "text-3 text-4";
-    gap: 1em;
     
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 1024px) {
       grid-template-areas:
         "graphic-1"
         "text-1"
@@ -267,10 +243,11 @@
         "graphic-3"
         "text-3"
         "graphic-4"
-        "text-4";
+        "text-4"
+        "graphic-5"
+        "text-5";
     }
   }
-}
 
 .about-grid > * {
   justify-self: center;
@@ -294,6 +271,10 @@
   grid-area: graphic-4;
 }
 
+.about-graphic-5 {
+  grid-area: graphic-5;
+}
+
 .about-text-1 {
   grid-area: text-1;
 }
@@ -310,10 +291,15 @@
   grid-area: text-4;
 }
 
+.about-text-5 {
+  grid-area: text-5;
+}
+
 .about-graphic-1,
 .about-graphic-2,
 .about-graphic-3,
-.about-graphic-4 {
+.about-graphic-4,
+.about-graphic-5 {
   width: 18vw;
   margin-top: 1vh;
   @media screen and (max-width: 1024px) {
@@ -327,21 +313,25 @@
 .about-text-1,
 .about-text-2,
 .about-text-3,
-.about-text-4 {
+.about-text-4,
+.about-text-5 {
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
+.icon {
+  padding-right: 2rem;
+}
+
 .static-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
   justify-items: center;
   border-radius: 15px;
   border: 1px solid transparent;
   margin: 12.5px 0;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1rem !important;
   font-weight: 500;
   font-family: inherit;
   background-color: white;

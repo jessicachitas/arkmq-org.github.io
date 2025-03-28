@@ -13,10 +13,9 @@ export default function Home() {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <main>
-        <Welcome />
-        <Install />
-        <Demo />
+        <Welcome /> 
         <About />
+        <Sponsors />
       </main>
     </Layout>
   );

@@ -1,6 +1,6 @@
 //import styles from "./styles.module.css"
 
-export default function Install() {
+export default function Sponsors() {
     return (
       <>
         {/* ----------------------------- Install Section ---------------------------- */}
