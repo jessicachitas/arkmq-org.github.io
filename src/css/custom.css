@@ -33,6 +33,7 @@
   --ifm-font-family-base: "Red Hat Display", Arial, Helvetica, sans-serif;
   --ifm-font-family-monospace: "Red Hat Mono", "Courier New", monospace;
   background-color: whitesmoke;
+    font-size: 1.1rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -59,6 +60,7 @@
 
 * {
   box-sizing: border-box;
+  font-size: 1.1rem;
 }
 
 .viewport {
@@ -92,14 +94,19 @@
 }
 
 .welcome {
-  float: left;
-  padding: 10%;
+  padding: 10% 70% 10% 10%;
   align-content: center;
+  @media screen and (max-width: 1024px) {
+    padding-right: 30%;
+    @media screen and (max-width: 786px) {
+      padding-right: 10%
+    }
+  }
 }
 
 .welcome-info {
   display: block;
-  padding-right: 50rem;
+  float: left;
 }
 
 .welcome-h1 {
@@ -113,6 +120,33 @@
     padding: 0%;
     font-size: 1rem;
   }
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.static-button {
+  max-width: 100%;
+  align-items: start;
+  justify-items: center;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  margin: 12.5px 0;
+  padding: 1rem 1rem;
+  font-size: 1rem !important;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.static-button:hover {
+  background-color: #a4ceff;
+  transition: 0.2s;
 }
 
 /* ----------------------------- Install Section ---------------------------- */
@@ -362,38 +396,6 @@
 
 .icon {
   padding-right: 2rem;
-}
-
-.static-button {
-  max-width: 50vw;
-  display: inline-flex;
-  align-items: center;
-  justify-items: center;
-  border-radius: 15px;
-  border: 1px solid transparent;
-  margin: 12.5px 0;
-  padding: 1rem 1rem;
-  font-size: 1rem !important;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-.static-button:not(.install-button) {
-  width: 70%;
-  @media screen and (max-width: 500px) {
-    padding: 0.3rem 0.75rem;
-    font-size: 0.7rem;
-    width: 100%;
-  }
-}
-
-ul {
-  list-style: none;
-  padding: 0;
 }
 
 .footer--dark {
