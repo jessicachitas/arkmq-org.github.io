@@ -1,9 +1,11 @@
+import welcomeLogo from "@site/static/img/arkmq-logo.png"
+
 export default function Welcome() {
   return (
     <>
       <div className="welcome viewport">
         <div className="welcome-info">
-          <h1 className="header">ArkMQ</h1>
+          <img className="welcome-logo" src={welcomeLogo}/>
           <h2 className="welcome-h2">
             A collection of container images that provide a way to deploy the
             Apache ActiveMQ Artemis Broker on Kubernetes
