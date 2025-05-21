@@ -12,7 +12,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "ArkMQ",
   tagline: "Powered by Docusaurus",
-  favicon: "img/favicon.png",
+  favicon: "img/arkmq-logo-icon.png",
 
   // Set the production url of your site here
   url: "https://your-docusaurus-site.example.com",
