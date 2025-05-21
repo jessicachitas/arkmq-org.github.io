@@ -1,4 +1,5 @@
 import welcomeLogo from "@site/static/img/arkmq-logo.png"
+import welcomeLogoDark from "@site/static/img/arkmq-logo-darkmode.png"
 
 export default function Welcome() {
   return (
@@ -6,6 +7,7 @@ export default function Welcome() {
       <div className="welcome viewport">
         <div className="welcome-info">
           <img className="welcome-logo" src={welcomeLogo}/>
+          <img className="welcome-logo-dark" src={welcomeLogoDark}/>
           <h2 className="welcome-h2">
             A collection of container images that provide a way to deploy the
             Apache ActiveMQ Artemis Broker on Kubernetes

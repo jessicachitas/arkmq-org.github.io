@@ -68,6 +68,10 @@
   color: white;
 }
 
+[data-theme='dark'] .blue-theme {
+  background-color: #0e4481;
+}
+
 .viewport {
   width: 100vw;
   height: 100vh;
@@ -109,10 +113,30 @@
   }
 }
 
+[data-theme="dark"] .welcome {
+  background-image: url(@site/static/img/background-dark.svg);
+}
+
 .welcome-logo {
+  display: flex;
   align-self: center;
   padding: 5% 0;
 }
+
+[data-theme="dark"] .welcome-logo {
+  display: none;
+}
+
+.welcome-logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] .welcome-logo-dark {
+  display: flex;
+  align-self: center;
+  padding: 5% 0;
+}
+
 
 .welcome-info {
   display: block;
@@ -155,7 +179,8 @@
 }
 
 .static-button:hover {
-  background-color: #a4ceff;
+  background-color: #6db0ff;
+  color: white;
   transition: 0.2s;
 }
 
