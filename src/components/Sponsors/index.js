@@ -2,7 +2,7 @@ export default function Sponsors() {
     return (
       <>
         {/* ----------------------------- Install Section ---------------------------- */}
-        <div className="install viewport background-2" id="install">
+        <div className="install viewport blue-theme" id="install">
           <div className="install-info">
             <h1 className="install-h1">How to Install header</h1>
             <h2 className="install-h2">More info header</h2>

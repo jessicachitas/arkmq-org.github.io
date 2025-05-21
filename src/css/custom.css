@@ -63,6 +63,11 @@
   font-size: 1.1rem;
 }
 
+.blue-theme {
+  background-color: #3d8de9;
+  color: white;
+}
+
 .viewport {
   width: 100vw;
   height: 100vh;
@@ -105,7 +110,8 @@
 }
 
 .welcome-logo {
-
+  align-self: center;
+  padding: 5% 0;
 }
 
 .welcome-info {

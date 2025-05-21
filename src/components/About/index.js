@@ -2,7 +2,7 @@ import aboutGraphic from "@site/static/img/about-graphic.png";
 
 export default function About() {
   return (
-    <div className="about about-viewport" id="about">
+    <div className="about about-viewport blue-theme" id="about">
       <div className="about-info">
         <div className="about-grid">
           <img
