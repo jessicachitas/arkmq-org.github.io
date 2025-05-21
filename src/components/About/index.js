@@ -1,4 +1,3 @@
-import styles from "./styles.module.css";
 import aboutGraphic from "@site/static/img/about-graphic.png";
 
 export default function About() {
