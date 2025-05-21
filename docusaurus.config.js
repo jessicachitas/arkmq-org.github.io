@@ -16,21 +16,21 @@ const config = {
 
   // Set the production url of your site here
   url: "https://your-docusaurus-site.example.com",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "arkmq-org", // Usually your GitHub org/user name.
-  projectName: "arkmq-org.github.io", // Usually your repo name.
+  // organizationName: "arkmq-org", // Usually your GitHub org/user name.
+  // projectName: "arkmq-org.github.io", // Usually your repo name.
+
+  //FOR DEVELOPMENT ONLY
+  //SWITCH TO ABOVE ORGNAME AND PROJECT NAME WHEN READY TO BE DEPLOYED
+  organizationName: "jessicachitas",
+  projectName: "arkmq-org.github.io",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -68,10 +68,10 @@ const config = {
     ({
       // Replace with your project's social card
       navbar: {
-        // title: "My Site",
         logo: {
           alt: "ArkMQ",
           src: "img/arkmq-logo.png",
+          srcDark: "img/arkmq-logo-darkmode.png"
         },
         items: [
           { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
