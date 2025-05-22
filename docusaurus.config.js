@@ -70,14 +70,14 @@ const config = {
       navbar: {
         logo: {
           alt: "ArkMQ",
-          src: "img/arkmq-logo.png",
-          srcDark: "img/arkmq-logo-darkmode.png"
+          src: "@site/static/img/arkmq-logo.png",
+          srcDark: "@site/static/img/arkmq-logo-darkmode.png"
         },
         items: [
           { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
-          { label: "Contribute", to: "/docs", position: "right" },
-          { label: "Docs", to: "/docs", position: "right" },
-          { label: "Contact Us", to: "/docs", position: "right" },
+          { label: "Contribute", to: "/", position: "right" },
+          { label: "Docs", to: "/", position: "right" },
+          { label: "Contact Us", to: "/", position: "right" },
           // {
           //   href: "https://github.com/arkmq-org",
           //   label: "GitHub",
