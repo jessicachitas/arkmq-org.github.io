@@ -15,8 +15,8 @@ const config = {
   favicon: "img/arkmq-logo-icon.png",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
-  baseUrl: "/",
+  url: "https://jessicachitas.github.io",
+  baseUrl: "/arkmq.github.io",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -75,9 +75,9 @@ const config = {
         },
         items: [
           { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
-          { label: "Contribute", to: "/docs/intro", position: "right" },
-          { label: "Docs", to: "/docs/getting-started/introduction", position: "right" },
-          { label: "Contact Us", to: "/docs/intro", position: "right" },
+          { label: "Contribute", to: "/docs", position: "right" },
+          { label: "Docs", to: "/docs", position: "right" },
+          { label: "Contact Us", to: "/docs", position: "right" },
           // {
           //   href: "https://github.com/arkmq-org",
           //   label: "GitHub",
@@ -93,9 +93,9 @@ const config = {
           {
             title: "Docs",
             items: [
-              { label: "Quick Start", to: "/docs/intro" },
-              { label: "Help", to: "/docs/intro" },
-              { label: "Tutorials", to: "/docs/intro" },
+              { label: "Quick Start", to: "/docs/getting-started/quick-start" },
+              { label: "Help", to: "/docs/help" },
+              { label: "Tutorials", to: "/docs/tutorials" },
             ],
           },
           {
