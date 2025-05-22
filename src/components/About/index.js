@@ -1,4 +1,8 @@
-import aboutGraphic from "@site/static/img/about-graphic.png";
+import Cloud from "@site/static/img/cloud-arrow-up-solid.png";
+import Kubernetes from "@site/static/img/box-open-solid.png";
+import Operator from "@site/static/img/user-solid.png";
+import Example from "@site/static/img/copy-solid.png";
+import CI from "@site/static/img/arrow-right-solid.png";
 
 export default function About() {
   return (
@@ -6,8 +10,8 @@ export default function About() {
       <div className="about-info">
         <div className="about-grid">
           <img
-            className="about-graphic-1"
-            src={aboutGraphic}
+            className="about-cloud"
+            src={Cloud}
             alt="About Graphic 1"
           ></img>
           <h1 className="about-header-1">Cloud Orientated</h1>
@@ -16,8 +20,8 @@ export default function About() {
             image
           </p>
           <img
-            className="about-graphic-2"
-            src={aboutGraphic}
+            className="about-kubernetes"
+            src={Kubernetes}
             alt="About Graphic 2"
           ></img>{" "}
           <h1 className="about-header-2">Kubernetes</h1>
@@ -25,8 +29,8 @@ export default function About() {
             The ability to run a Kubernetes native container on Kubernetes
           </p>
           <img
-            className="about-graphic-3"
-            src={aboutGraphic}
+            className="about-operator"
+            src={Operator}
             alt="About Graphic 3"
           ></img>{" "}
           <h1 className="about-header-3">Operator</h1>
@@ -34,8 +38,8 @@ export default function About() {
             The Operator based solution to manage the Kubernetes deployment
           </p>
           <img
-            className="about-graphic-4"
-            src={aboutGraphic}
+            className="about-example"
+            src={Example}
             alt="About Graphic 4"
           ></img>
           <h1 className="about-header-4">Examples</h1>
@@ -43,8 +47,8 @@ export default function About() {
             A suite of examples to demonstrate each feature
           </p>
           <img
-            className="about-graphic-5"
-            src={aboutGraphic}
+            className="about-ci"
+            src={CI}
             alt="About Graphic 5"
           ></img>
           <h1 className="about-header-5">CI/CD</h1>

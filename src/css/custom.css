@@ -317,64 +317,44 @@
   height: auto;
 }
 
-.about-graphic-1 {
+.about-cloud {
   grid-area: graphic-1;
 }
 
-.about-graphic-2 {
+.about-kubernetes {
   grid-area: graphic-2;
 }
 
-.about-graphic-3 {
+.about-operator {
   grid-area: graphic-3;
 }
 
-.about-graphic-4 {
+.about-example {
   grid-area: graphic-4;
 }
 
-.about-graphic-5 {
+.about-ci {
   grid-area: graphic-5;
 }
 
-.about-graphic-1 {
-  grid-area: graphic-1;
+.about-header-1 {
+  grid-area: header-1;
 }
 
-.about-graphic-2 {
-  grid-area: graphic-2;
+.about-header-2 {
+  grid-area: header-2;
 }
 
-.about-graphic-3 {
-  grid-area: graphic-3;
+.about-header-3 {
+  grid-area: header-3;
 }
 
-.about-graphic-4 {
-  grid-area: graphic-4;
+.about-header-4 {
+  grid-area: header-4;
 }
 
-.about-graphic-5 {
-  grid-area: graphic-5;
-}
-
-.about-section-1 {
-  grid-area: section-1;
-}
-
-.about-section-2 {
-  grid-area: section-2;
-}
-
-.about-section-3 {
-  grid-area: section-3;
-}
-
-.about-section-4 {
-  grid-area: section-4;
-}
-
-.about-section-5 {
-  grid-area: section-5;
+.about-header-5 {
+  grid-area: header-5;
 }
 
 .about-text-1 {
@@ -397,17 +377,17 @@
   grid-area: text-5;
 }
 
-.about-graphic-1,
-.about-graphic-2,
-.about-graphic-3,
-.about-graphic-4,
-.about-graphic-5 {
-  min-width: 150px;
-  max-width: 200px;
+.about-cloud,
+.about-kubernetes,
+.about-operator,
+.about-example,
+.about-ci {
+  min-height: 150px;
+  max-height: 200px;
   @media screen and (max-width: 1024px) {
-    width: 25vw;
+    height: 25%;
     @media screen and (max-width: 500px) {
-      width: 75vw;
+      height: 15%;
     }
   }
 }
