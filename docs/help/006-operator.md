@@ -1342,7 +1342,7 @@ When deploying the above CR, the operator will append the external PVC to the st
 Note for each pod the PVC's name must follow the pattern `<volumeName>-<statefulset-name>-<ordinal>`.
 For the above CR the matching PVC names are **mydata-artemis-broker-ss-0** for pod0 and **mydata-artemis-broker-ss-1** for pod1 respectively. You can configure an optional VolumeMount for each PVC under **extraVolumeMounts**. If not specified the default mount path is **/opt/\<volumeName\>/data**.
 
-For complete configruation options please take a look at the api definitions of [broker CRD](../../api/v1beta1/activemqartemis_types.go).
+For complete configruation options please take a look at the api definitions of [broker CRD]().
 
 ## Using cert-manager and trust-manager configure brokers
 

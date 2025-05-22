@@ -60,7 +60,7 @@ activemq-artemis-controller-manager-5ff459cd95-kn22m   1/1     Running   0      
 
 ## Deploying the broker
 
-Now that the operator is running and listening for changes related to our crd we can deploy our [artemis single example](../../examples/artemis/artemis_single.yaml)
+Now that the operator is running and listening for changes related to our crd we can deploy our [artemis single example]()
 which looks like
 
 ```$yaml
@@ -208,7 +208,7 @@ After the draining is complete it shuts down itself.
 
 The message draining only works when you enabled persistence and messageMigration on broker custome resource.
 
-For example, you can deploy a cluster from our [~broker cluster persistence example~](../../examples/artemis/artemis_cluster_persistence.yaml)
+For example, you can deploy a cluster from our [~broker cluster persistence example~]()
 
 ```$yaml
 apiVersion: broker.amq.io/v1beta1
@@ -372,7 +372,7 @@ Data
 logging.properties:  2687 bytes
 ```
 
-The next step is to define the extraMount in the ActiveMQArtemis custom resource like in our [~example~](../../examples/artemis/artemis_custom_logging_secret.yaml) and deploy it.
+The next step is to define the extraMount in the ActiveMQArtemis custom resource like in our [~example~]() and deploy it.
 
 ```$shell
 $ kubectl create -f ./examples/artemis/artemis_custom_logging_secret.yaml -n activemq-artemis-operator
@@ -398,7 +398,7 @@ $ kubectl create configmap newlog4j-logging-config --from-file=logging.propertie
 secret/newlog4j-logging-config created
 ```
 
-and use the [example](../../examples/artemis/artemis_custom_logging_configmap.yaml)
+and use the [example]()
 
 
 ## 

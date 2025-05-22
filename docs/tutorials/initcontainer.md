@@ -58,7 +58,7 @@ After the `post-config.sh` script is executed, the broker instance is launched w
 
     If you need additional resources (`.xml` files, `.jar` files, etc.) for your custom configuration, you need to add them to your image and make sure that they are accessible to your post-config scripts.
 
-2. Next, you need to build your custom Init Container image and put it in a container repository (for example you can create a repository on [Red Hat Quay](quay.io)).
+2. Next, you need to build your custom Init Container image and put it in a container repository (for example you can create a repository on [Red Hat Quay](https://quay.io)).
 
 3. When you have added the image to a repository, you need to configure the Operator to use the custom Init Container image. To do this, edit the CR file. For the `image` property, specify the custom image. For example:
 
