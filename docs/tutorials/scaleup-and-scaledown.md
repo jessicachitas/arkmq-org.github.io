@@ -18,7 +18,7 @@ $ git clone https://github.com/arkmq-org/activemq-artemis-operator.git
 $ cd activemq-artemis-operator
 ```
 
-If you are not sure how to deploy the operator take a look at [this tutorial]("using_operator.md").
+If you are not sure how to deploy the operator take a look at [this tutorial](/docs/tutorials/using-operator.md).
 
 In this blog post we assume you deployed the operator to a namespace called **myproject**.
 

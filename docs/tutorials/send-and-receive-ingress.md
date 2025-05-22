@@ -61,7 +61,7 @@ export CLUSTER_IP=$(minikube ip --profile tutorialtester)
 #### Make sure the domain of your cluster is resolvable
 
 If you are running your OpenShift cluster locally, you might not be able to
-resolve the urls to IPs out of the blue. Follow [this guide]("/docs/help/001-hostname-resolution") to configure your setup.
+resolve the urls to IPs out of the blue. Follow [this guide](/docs/help/001-hostname-resolution.md) to configure your setup.
 
 This tutorial will follow the simple /etc/hosts approach, but feel free to use
 the most appropriate one for you.

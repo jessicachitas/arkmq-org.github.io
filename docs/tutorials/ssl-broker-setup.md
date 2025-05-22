@@ -16,7 +16,7 @@ Before you start you need have access to a running Kubernetes cluster environmen
 
 ### Deploy Arkmq-org operator
 First you need to deploy the arkmq-org operator.
-If you are not sure how to deploy the operator take a look at [this blog]("using_operator.md").
+If you are not sure how to deploy the operator take a look at [this blog](/docs/tutorials/using-operator.md).
 
 In this blog post we assume you deployed the operator to a namespace called **myproject**.
 

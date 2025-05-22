@@ -23,7 +23,7 @@ You can install a [Minikube](https://minikube.sigs.k8s.io/docs/) or a [CodeReady
 
 To launch the operator you will need to clone the [activemq-artemis-operator](https://github.com/arkmq-org/activemq-artemis-operator) and checkout the main branch.
 
-(Optional) Follow the [building](../help/building.md") instructions, tag, and push it into your project
+(Optional) Follow the [building](docs/help/002-building.md) instructions, tag, and push it into your project
 namespace.
 
 ## Deploying the operator

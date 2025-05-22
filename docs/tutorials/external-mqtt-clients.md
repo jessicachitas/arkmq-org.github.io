@@ -22,7 +22,7 @@ $ minikube kubectl -- patch deployment -n ingress-nginx ingress-nginx-controller
 
 # Deploy Arkmq-org operator
 First you need to deploy the Arkmq-org operator.
-If you are not sure how to deploy the operator take a look at [this blog](using_operator.md").
+If you are not sure how to deploy the operator take a look at [this blog](/docs/tutorials/using-operator.md).
 
 # Download the test certficates from Apache ActiveMQ Artemis
 ```shell script

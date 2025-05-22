@@ -75,7 +75,7 @@ After the `post-config.sh` script is executed, the broker instance is launched w
                 ...
     ```
 
-4. Finally, deploy the CR file in the usual manner. For more information, see [Getting Started with the arkmq-org Operator]("using_operator"} "About Us").
+4. Finally, deploy the CR file in the usual manner. For more information, see [Getting Started with the arkmq-org Operator](/docs/tutorials/using-operator.md).
 
 ### Further information
 * A fully working example is available [here](https://github.com/arkmq-org/arkmq-org-examples/tree/main/operator/init/jdbc).
