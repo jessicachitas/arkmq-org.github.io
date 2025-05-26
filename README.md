@@ -4,7 +4,7 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 **Please fork and make a PR if you would like to make any changes to the docs!**
 
-### Previewing your Changes
+## Previewing your Changes
 Install the node modules required to build your development server:
 
 ```
