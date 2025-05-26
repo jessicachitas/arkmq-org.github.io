@@ -16,7 +16,7 @@ const config = {
 
   // Set the production url of your site here
   url: "https://jessicachitas.github.io",
-  baseUrl: "/arkmq.github.io",
+  baseUrl: "/arkmq-org.github.io",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
