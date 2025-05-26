@@ -144,7 +144,7 @@ Users can use the activemqartemisaddress CRD to create and remove queues/address
 
 Having [a deployed broker pod](#deploying-the-broker) is necessary to apply the commands in this section.
 
-Assuming you have one already running, you can then deploy an activemqartemisaddress resource from the [~examples dir~](../../examples/address/address_queue.yaml):
+Assuming you have one already running, you can then deploy an activemqartemisaddress resource from the [~examples dir~]:
 
 address-queue.yaml:
 ```$yaml
