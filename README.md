@@ -10,6 +10,8 @@ $ npm install
 
 ### Local Development
 
+**IMPORTANT: Before starting your development server, please edit the [Docusaurus config](docusaurus.config.js) to match your own credentials**
+
 ```
 $ npm start
 ```

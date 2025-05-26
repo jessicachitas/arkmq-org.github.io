@@ -15,6 +15,7 @@ const config = {
   favicon: "img/arkmq-logo-icon.png",
 
   // Set the production url of your site here
+  // When forking, please change url to GIT_USER.github.io and baseUrl to fork repo name
   url: "https://jessicachitas.github.io",
   baseUrl: "/arkmq-org.github.io",
 
@@ -23,8 +24,10 @@ const config = {
   // organizationName: "arkmq-org", // Usually your GitHub org/user name.
   // projectName: "arkmq-org.github.io", // Usually your repo name.
 
-  //FOR DEVELOPMENT ONLY
-  //SWITCH TO ABOVE ORGNAME AND PROJECT NAME WHEN READY TO BE DEPLOYED
+  // FOR DEVELOPMENT ONLY
+  // SWITCH TO ABOVE ORGNAME AND PROJECT NAME WHEN READY TO BE DEPLOYED
+
+  // When forking, please change organisationName to your GitHub username and projectName to your fork repo name
   organizationName: "jessicachitas",
   projectName: "arkmq-org.github.io",
 
