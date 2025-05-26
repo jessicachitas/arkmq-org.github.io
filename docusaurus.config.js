@@ -73,8 +73,8 @@ const config = {
       navbar: {
         logo: {
           alt: "ArkMQ",
-          src: "@site/static/img/arkmq-logo.png",
-          srcDark: "@site/static/img/arkmq-logo-darkmode.png"
+          src: "img/arkmq-logo.png",
+          srcDark: "img/arkmq-logo-darkmode.png"
         },
         items: [
           { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
