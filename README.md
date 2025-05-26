@@ -1,14 +1,15 @@
-# Website
+# ArkMQ Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-### Installation
+**Please fork and make a PR if you would like to make any changes to the docs!**
+
+### Previewing your Changes
+Install the node modules required to build your development server:
 
 ```
 $ npm install
 ```
-
-### Local Development
 
 **IMPORTANT: Before starting your development server, please edit the [Docusaurus config](docusaurus.config.js) to match your own credentials**
 
@@ -18,26 +19,8 @@ $ npm start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-<!-- ### Build
+## BEFORE DOING A PULL REQUEST (PR)
 
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch. -->
+1. [Make sure you are familiar with how Docusaurus builds their Markdown files.](https://docusaurus.io/docs/markdown-features)
+2. Make sure there are no relative links to any ArkMQ specific files in your Markdown. If they do exist, please change them to URLs linking to the right material within the ArkMQ GitHub. 
+3. Fork the website repo and deploy a preview version of your proposed changes using the above method. This will make obvious any missed links from step 2.
