@@ -78,9 +78,8 @@ const config = {
         },
         items: [
           { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
-          { label: "Contribute", to: "/", position: "right" },
-          { label: "Docs", to: "/", position: "right" },
-          { label: "Contact Us", to: "/", position: "right" },
+          { label: "Docs", to: "/docs", position: "right" },
+          { label: "Contribute", to: "/docs/contribute", position: "right" },
           // {
           //   href: "https://github.com/arkmq-org",
           //   label: "GitHub",
