@@ -87,8 +87,7 @@
   }
 }
 
-.install,
-.demo,
+.sponsor,
 .about {
   display: flex;
   justify-content: center;
@@ -182,79 +181,6 @@
   background-color: #6db0ff;
   color: white;
   transition: 0.2s;
-}
-
-/* ----------------------------- Install Section ---------------------------- */
-
-.install-grid {
-  display: grid;
-  grid-template-areas: "install-info demo-graphic";
-  align-items: center;
-  align-content: stretch;
-  justify-items: center;
-  justify-content: stretch;
-  @media screen and (max-width: 500px) {
-    grid-template-areas: "install-info"
-    "demo-graphic"
-  }
-}
-
-.install-info {
-  padding: 10%;
-
-}
-
-.install-h3 {
-  font-weight: 500;
-}
-
-.install-code {
-  /* word-break: break-all; */
-  font-family: "Red Hat Mono", monospace !important;
-  font-weight: 500;
-  padding: 1rem;
-  background-color: #262626;
-  border-radius: 15px;
-  width: 100%;
-}
-
-.install-code p {
-  display: inline-flex;
-}
-
-.install-button {
-  @media screen and (max-width: 768px) {
-    padding: 10px;
-    font-size: larger;
-  }
-}
-
-.install-graphic {
-  padding: 10%;
-}
-
-.install-gif {
-  align-self: center;
-  justify-self: center;
-  grid-area: demo-graphic;
-  width: 100%;
-  @media screen and (max-width: 1024px) {
-    width: 75%;
-  }
-}
-
-/* ------------------------------ Demo Section ------------------------------ */
-
-.demo-h1 {
-  text-align: center;
-  font-size: xx-large;
-}
-
-.demo-gif {
-  display: flex;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
 }
 
 /* ------------------------------ About Section ----------------------------- */
@@ -411,6 +337,34 @@
 
 .icon {
   padding-right: 2rem;
+}
+
+/* ----------------------------- Sponsor Section ---------------------------- */
+
+.sponsor-title {
+  text-align: center;
+}
+
+.sponsor-carousel {
+  padding: 30%;
+ display: flex;
+ flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+}
+
+.swiper {
+  width: 50%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer--dark {
