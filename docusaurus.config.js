@@ -66,6 +66,15 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      require.resolve("docusaurus-lunr-search"),
+      {
+        languages: ["en"],
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -74,10 +83,14 @@ const config = {
         logo: {
           alt: "ArkMQ",
           src: "img/arkmq-logo.png",
-          srcDark: "img/arkmq-logo-darkmode.png"
+          srcDark: "img/arkmq-logo-darkmode.png",
         },
         items: [
-          { label: "Quick Start", to: "/docs/getting-started/quick-start", position: "right" },
+          {
+            label: "Quick Start",
+            to: "/docs/getting-started/quick-start",
+            position: "right",
+          },
           { label: "Docs", to: "/docs", position: "right" },
           { label: "Contribute", to: "/docs/contribute", position: "right" },
           // {
@@ -102,9 +115,7 @@ const config = {
           },
           {
             title: "Community",
-            items: [
-              { label: "GitHub", href: "https://github.com/arkmq-org" },
-            ],
+            items: [{ label: "GitHub", href: "https://github.com/arkmq-org" }],
           },
         ],
         copyright: `Apache, Apache ActiveMQ Artemis,Artemis and associated open source project names are trademarks of the Apache Software Foundation.`,
