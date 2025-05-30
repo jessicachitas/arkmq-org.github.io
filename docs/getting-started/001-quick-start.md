@@ -60,7 +60,7 @@ activemq-artemis-controller-manager-5ff459cd95-kn22m   1/1     Running   0      
 
 ## Deploying the broker
 
-Now that the operator is running and listening for changes related to our crd we can deploy our [artemis single example]
+Now that the operator is running and listening for changes related to our crd we can deploy our [artemis single example](../../examples/artemis/artemis_single.yaml)
 which looks like
 
 ```$yaml
@@ -144,7 +144,7 @@ Users can use the activemqartemisaddress CRD to create and remove queues/address
 
 Having [a deployed broker pod](#deploying-the-broker) is necessary to apply the commands in this section.
 
-Assuming you have one already running, you can then deploy an activemqartemisaddress resource from the [~examples dir~]:
+Assuming you have one already running, you can then deploy an activemqartemisaddress resource from the [examples dir](../../examples/address/address_queue.yaml):
 
 address-queue.yaml:
 ```$yaml
@@ -208,7 +208,7 @@ After the draining is complete it shuts down itself.
 
 The message draining only works when you enabled persistence and messageMigration on broker custome resource.
 
-For example, you can deploy a cluster from our [~broker cluster persistence example~]
+For example, you can deploy a cluster from our [broker cluster persistence example](../../examples/artemis/artemis_cluster_persistence.yaml)
 
 ```$yaml
 apiVersion: broker.amq.io/v1beta1
@@ -372,7 +372,7 @@ Data
 logging.properties:  2687 bytes
 ```
 
-The next step is to define the extraMount in the ActiveMQArtemis custom resource like in our [~example~] and deploy it.
+The next step is to define the extraMount in the ActiveMQArtemis custom resource like in our [example](../../examples/artemis/artemis_custom_logging_secret.yaml) and deploy it.
 
 ```$shell
 $ kubectl create -f ./examples/artemis/artemis_custom_logging_secret.yaml -n activemq-artemis-operator
@@ -398,7 +398,7 @@ $ kubectl create configmap newlog4j-logging-config --from-file=logging.propertie
 secret/newlog4j-logging-config created
 ```
 
-and use the [example]
+and use the [example](../../examples/artemis/artemis_custom_logging_configmap.yaml)
 
 
 ## 
@@ -410,4 +410,3 @@ Run this command to undeploy the operator
 ```$shell
 $ ./deploy/undeploy_all.sh
 ```
-
