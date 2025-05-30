@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         <Welcome /> 
         <About />
-        <Sponsors />
+        {/* <Sponsors /> */}
       </main>
     </Layout>
   );
