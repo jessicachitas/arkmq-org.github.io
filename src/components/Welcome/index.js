@@ -37,6 +37,8 @@ export default function Welcome() {
             </button>
           </div>
         </div>
+        <div className="down-arrow">
+        <a href="#about"><button className="down-arrow-button">&#8582;</button></a></div>
       </div>
     </>
   );

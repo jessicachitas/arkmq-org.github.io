@@ -33,11 +33,11 @@
   --ifm-font-family-base: "Red Hat Display", Arial, Helvetica, sans-serif;
   --ifm-font-family-monospace: "Red Hat Mono", "Courier New", monospace;
   background-color: whitesmoke;
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #6db0ff;
   --ifm-color-primary-dark: #499cff;
   --ifm-color-primary-darker: #3692ff;
@@ -60,6 +60,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-size: 1.1rem;
 }
 
@@ -68,7 +69,7 @@
   color: white;
 }
 
-[data-theme='dark'] .blue-theme {
+[data-theme="dark"] .blue-theme {
   background-color: #0e4481;
 }
 
@@ -102,18 +103,21 @@
   background-repeat: none;
   background-size: cover;
   background-position: center;
-  padding: 10% 70% 20% 10%;
-  align-content: center;
-  @media screen and (max-width: 1024px) {
-    padding-right: 30%;
-    @media screen and (max-width: 786px) {
-      padding-right: 10%
-    }
-  }
 }
 
 [data-theme="dark"] .welcome {
   background-image: url(@site/static/img/background-dark.svg);
+}
+
+.welcome-info {
+  padding: 10% 70% 10% 10%;
+  align-content: center;
+  @media screen and (max-width: 1024px) {
+    padding-right: 30%;
+    @media screen and (max-width: 786px) {
+      padding-right: 10%;
+    }
+  }
 }
 
 .welcome-logo {
@@ -134,12 +138,6 @@
   display: flex;
   align-self: center;
   padding: 5% 0;
-}
-
-
-.welcome-info {
-  display: block;
-  float: left;
 }
 
 .welcome-h1 {
@@ -177,7 +175,34 @@
   transition: border-color 0.25s;
 }
 
-.static-button:hover {
+.down-arrow {
+  z-index: 99999;
+  display: flex;
+  position: -webkit-sticky;
+  justify-content: center;
+}
+
+.down-arrow-button {
+  background-color: white;
+  color: black;
+  box-shadow: black;
+  text-align: center;
+  font-weight: 900;
+  font-size: xx-large;
+  padding: 20px 30px;
+  border-radius: 100%;
+  border: transparent;
+  transition: border-color 0.25s;
+}
+
+[data-theme="dark"] .static-button,
+[data-theme="dark"] .down-arrow-button {
+  background-color: #444950;
+  color: white;
+}
+
+.static-button:hover,
+.down-arrow-button:hover {
   background-color: #6db0ff;
   color: white;
   transition: 0.2s;
@@ -212,30 +237,26 @@
   text-align: center;
   gap: 2em;
   height: auto;
-    
-    @media screen and (max-width: 1024px) {
-      grid-template-areas:
-        "graphic-1"
-        "header-1"
-        "text-1"
 
-        "graphic-2"
-        "header-2"
-        "text-2"
-
-        "graphic-3"
-        "header-3"
-        "text-3"
-
-        "graphic-4"
-        "header-4"
-        "text-4"
-
-        "graphic-5"
-        "header-5"
-        "text-5";
-    }
+  @media screen and (max-width: 1024px) {
+    grid-template-areas:
+      "graphic-1"
+      "header-1"
+      "text-1"
+      "graphic-2"
+      "header-2"
+      "text-2"
+      "graphic-3"
+      "header-3"
+      "text-3"
+      "graphic-4"
+      "header-4"
+      "text-4"
+      "graphic-5"
+      "header-5"
+      "text-5";
   }
+}
 
 .about-grid > * {
   justify-self: center;
@@ -347,8 +368,8 @@
 
 .sponsor-carousel {
   padding: 30%;
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
   align-self: center;
   justify-self: center;
   width: 100%;
