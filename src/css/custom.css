@@ -368,7 +368,7 @@
 }
 
 .algolia-docsearch-suggestion--category-header {
-  background-color: #7d46ad;
+  background-color: #7d46ad !important;
 }
 
 .footer--dark {
