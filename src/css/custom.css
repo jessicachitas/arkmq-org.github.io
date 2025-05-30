@@ -367,6 +367,10 @@
   align-items: center;
 }
 
+.algolia-docsearch-suggestion--category-header {
+  background-color: #7d46ad;
+}
+
 .footer--dark {
   --ifm-footer-background-color: #262626 !important;
 }
