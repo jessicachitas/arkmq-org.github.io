@@ -16,4 +16,4 @@ Each chapter is a single markdown file found under the [docs](https://github.com
 
 ## Help
 
-Get help on arkmq-org.io. [Help →](../help/)
+Get help on arkmq-org.io. [Help →](help/index.md)
