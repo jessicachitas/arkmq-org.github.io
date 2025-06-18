@@ -17,7 +17,7 @@ const config = {
   // Set the production url of your site here
   // When forking, please change url to GIT_USER.github.io and baseUrl to fork repo name
   url: "https://jessicachitas.github.io",
-  baseUrl: "/",
+  baseUrl: "/arkmq-org.github.io/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

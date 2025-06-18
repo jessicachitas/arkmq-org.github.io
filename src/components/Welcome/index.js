@@ -24,20 +24,20 @@ export default function Welcome() {
           <div className="button-group">
             <button
               className="static-button"
-              onClick={() => history.push("/docs/getting-started/quick-start")}
+              onClick={() => history.push("/arkmq-org.github.io/docs/getting-started/quick-start")}
             >
               Quick Start Guide here
             </button>
             <button
               className="static-button"
-              onClick={() => history.push("/docs/contribute")}
+              onClick={() => history.push("/arkmq-org.github.io/docs/contribute")}
             >
               Contribute to the project
             </button>
 
             <button
               className="static-button"
-              onClick={() => history.push("/docs/")}
+              onClick={() => history.push("/arkmq-org.github.io/docs/")}
             >
               View documentation here
             </button>
