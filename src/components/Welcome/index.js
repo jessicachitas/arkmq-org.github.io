@@ -2,18 +2,12 @@ import { useHistory } from "react-router-dom";
 import welcomeLogo from "@site/static/img/arkmq-logo.png";
 import welcomeLogoDark from "@site/static/img/arkmq-logo-darkmode.png";
 
-import Cloud from "@site/static/img/cloud-arrow-up-solid.png";
-import Kubernetes from "@site/static/img/box-open-solid.png";
-import Operator from "@site/static/img/user-solid.png";
-import Example from "@site/static/img/copy-solid.png";
-import CI from "@site/static/img/arrow-right-solid.png";
-
 export default function Welcome() {
   const history = useHistory();
 
   return (
     <>
-      <div className="welcome welcome-viewport viewport">
+      <div className="welcome viewport">
         <div className="welcome-info">
           <img className="welcome-logo" src={welcomeLogo} />
           <img className="welcome-logo-dark" src={welcomeLogoDark} />
@@ -42,19 +36,8 @@ export default function Welcome() {
               View documentation here
             </button>
           </div>
-          {/* <div className="down-arrow">
-          <a href="#about">
-            <button className="down-arrow-button">&#10140;</button>
-          </a>
-          </div> */}
-
-          <div className="about-grid">
+          <div className="about-grid hide-for-mobile">
                     <div className="about-section-1">
-                      {/* <img
-                        className="about-cloud"
-                        src={Cloud}
-                        alt="About Graphic 1"
-                      ></img>{" "} */}
                       <h1 className="about-header">Cloud Orientated</h1>
                       <p className="about-text" role="paragraph">
                         The ability to quickly deploy and run the broker as a container
@@ -62,40 +45,24 @@ export default function Welcome() {
                       </p>
                     </div>
                     <div className="about-section-2">
-                      {/* <img
-                        className="about-kubernetes"
-                        src={Kubernetes}
-                        alt="About Graphic 2"
-                      ></img>{" "} */}
                       <h1 className="about-header">Kubernetes</h1>
                       <p className="about-text" role="paragraph">
                         The ability to run a Kubernetes native container on Kubernetes
                       </p>
                     </div>
                     <div className="about-section-3">
-                      {/* <img
-                        className="about-operator"
-                        src={Operator}
-                        alt="About Graphic 3"
-                      ></img>{" "} */}
                       <h1 className="about-header">Operator</h1>
                       <p className="about-text" role="paragraph">
                         The operator based solution to manage the Kubernetes deployment
                       </p>
                     </div>
                     <div className="about-section-4">
-                      {/* <img
-                        className="about-example"
-                        src={Example}
-                        alt="About Graphic 4"
-                      ></img> */}
                       <h1 className="about-header">Examples</h1>
                       <p className="about-text" role="paragraph">
                         A suite of examples to demonstrate each feature
                       </p>
                     </div>
                     <div className="about-section-5">
-                      {/* <img className="about-ci" src={CI} alt="About Graphic 5"></img> */}
                       <h1 className="about-header">CI/CD</h1>
                       <p className="about-text" role="paragraph">
                         Continuous intergration and deployment for quick development
