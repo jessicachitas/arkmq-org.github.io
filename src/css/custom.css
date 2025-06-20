@@ -47,15 +47,7 @@
   --ifm-color-primary-lightest: #91c4ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-pre-background: #003cac;
-  background-color: #262626;
-}
-
-.header {
-  display: flex;
-  align-content: center;
-  @media screen and (max-width: 1440px) {
-    font-size: 2.5rem;
-  }
+  background-color: rgb(38, 38, 38);
 }
 
 * {
@@ -78,6 +70,10 @@
   z-index: 10000;
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: none;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: rgba(38, 38, 38, 0.7);
 }
 
 .viewport {
@@ -120,7 +116,7 @@
   text-align: center;
   align-content: space-between;
   padding: 25%;
-  @media screen and (max-width: 1520px) and (orientation: landscape) {
+  @media screen and (max-width: 1920px) and (orientation: landscape) {
     padding: 20% 15%;
   }
 }
@@ -151,8 +147,8 @@
 
 .welcome-h2 {
   font-weight: 500;
-  @media screen and (max-width: 1520px) {
-    font-size: 1.2rem;
+  @media screen and (max-width: 1920px) {
+    font-size: 1.5rem;
     @media screen and (max-width: 786px) {
       padding: 0%;
       font-size: 1rem;
@@ -192,15 +188,14 @@
   }
 }
 
-[data-theme="dark"] .static-button,
-[data-theme="dark"] .down-arrow-button {
-  background-color: #444950;
+.static-button:hover {
+  background-color: #6db0ff;
   color: white;
+  transition: 0.2s;
 }
 
-.static-button:hover,
-.down-arrow-button:hover {
-  background-color: #6db0ff;
+[data-theme="dark"] .static-button:hover {
+  background-color: #0e4481;
   color: white;
   transition: 0.2s;
 }
@@ -230,6 +225,14 @@
   margin: 2%;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
+}
+
+[data-theme="dark"] .about-section-1,
+[data-theme="dark"] .about-section-2,
+[data-theme="dark"] .about-section-3,
+[data-theme="dark"] .about-section-4,
+[data-theme="dark"] .about-section-5 {
+  background-color: rgba(38, 38, 38, 0.7);
 }
 
 .about-section-1 {
@@ -262,7 +265,7 @@
   align-content: stretch;
   justify-items: center;
   justify-content: stretch;
-  text-align: center; 
+  text-align: center;
   height: fit-content;
 
   @media screen and (max-width: 1024px) {
@@ -301,14 +304,18 @@
 }
 
 .about-header {
-  @media screen and (max-width: 1520px) {
-    font-size: 30px;
+  @media screen and (max-width: 1920px) {
+    font-size: 2rem;
   }
 }
 
 .about-text {
+  font-size: 1rem !important;
   margin-block-start: 0;
   margin-block-end: 0;
+  @media screen and (max-width: 1920px) {
+    font-size: 1.2rem;
+  }
 }
 
 .icon {
@@ -348,5 +355,9 @@
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #262626 !important;
+  --ifm-footer-background-color: #3d8de9 !important;
+}
+
+[data-theme="dark"] .footer--dark {
+  --ifm-footer-background-color: #0e4481 !important;
 }
