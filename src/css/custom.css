@@ -278,6 +278,7 @@
   justify-content: stretch;
   text-align: center;
   height: fit-content;
+  row-gap: 5%;
 
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     grid-template-columns: 1fr;
@@ -296,8 +297,11 @@
 
 .about-grid > * {
   justify-self: center;
-  align-self: center;
-  height: auto;
+  align-self: stretch;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-cloud,
