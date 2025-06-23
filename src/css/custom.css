@@ -55,6 +55,12 @@
   scroll-behavior: smooth;
 }
 
+main {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
 .blue-theme {
   background-color: #3d8de9;
   color: white;
@@ -90,6 +96,7 @@
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     height: auto;
     min-height: 100vh;
+    padding-bottom: 4rem;
   }
 }
 
@@ -213,9 +220,9 @@
 /* ------------------------------ About Section ----------------------------- */
 
 .about {
-  padding: 10% 5%;
+  padding: 10% 5% 6rem 5%;
   @media screen and (max-width: 1024px) and (orientation: portrait) {
-    padding: 5% 8%;
+    padding: 5% 8% 5rem 8%;
   }
 }
 
@@ -230,14 +237,15 @@
   border-radius: 20px;
   @media screen and (max-width: 1024px) {
     background-color: rgb(14, 68, 129, 0.5);
-  @media screen and (max-width: 1024px) and (orientation: portrait) {
-    padding: 3%;
-    margin: 1%;
-    @media screen and (max-width: 390px) {
-      padding: 4%;
-      margin: 0.5%;
+    @media screen and (max-width: 1024px) and (orientation: portrait) {
+      padding: 3%;
+      margin: 1%;
+      @media screen and (max-width: 390px) {
+        padding: 4%;
+        margin: 0.5%;
+      }
     }
-  }}
+  }
 }
 
 [data-theme="dark"] .about-section-1,
