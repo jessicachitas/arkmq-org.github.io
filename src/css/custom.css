@@ -227,9 +227,9 @@ main {
   padding: 10% 5% 6rem 5%;
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     padding: 5% 8% 0 8%;
-  }
-  @media screen and (max-width: 1600px) and (orientation: landscape) {
-    padding: 3% 5% 0 5%;
+    @media screen and (max-width: 1600px) and (orientation: landscape) {
+      padding: 3% 5% 0 5%;
+    }
   }
 }
 
